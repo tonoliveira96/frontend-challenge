@@ -12,6 +12,10 @@ export const Header = styled.div `
 `;
 
 export const ConatinerSearch = styled.div `
+    display: flex;
+    width: 100%;
+    height: 247px;
+    background: #4F9419;
 
 `
 
