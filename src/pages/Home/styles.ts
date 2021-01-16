@@ -12,7 +12,7 @@ export const Header = styled.div`
 `;
 
 export const ConatinerSearch = styled.div`
-    padding: 30px 50px;
+  padding: 30px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,11 +26,11 @@ export const ConatinerSearch = styled.div`
     border-radius: 7px;
     background: #006c18;
   }
-  
-  input{
-      border-radius: 7px;
-      border: 0;
-      height: 48px;
+
+  input {
+    border-radius: 7px;
+    border: 0;
+    height: 48px;
   }
 
   input.local {
@@ -64,19 +64,19 @@ export const Place = styled.div`
   border: 1px solid #868686;
   border-radius: 10px;
 
-  span{
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  div {
 
-      svg{
-          right: 0;
+      button {
+        margin-left: 16px;
+        background: none;
+        border: 0;
+        right: 0;
       }
-  }
 
-  img {
-    width: 56px;
-    height: 34px;
+    img {
+      width: 56px;
+      height: 34px;
+    }
   }
 
   h3 {
