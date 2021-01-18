@@ -31,6 +31,7 @@ export const ConatinerSearch = styled.div`
     border-radius: 7px;
     border: 0;
     height: 48px;
+    margin-left: 12px;
   }
 
   input.local {
@@ -63,12 +64,12 @@ export const ContainerCountry = styled.div`
 export const Place = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 14px 36px;
+  padding: 14px 32px;
   width: 250px;
   height: 250px;
   border: 1px solid #868686;
   border-radius: 10px;
-
+  margin-right:30px;
   div {
 
       button {
@@ -81,7 +82,7 @@ export const Place = styled.div`
     img {
       width: 56px;
       height: 34px;
-      margin-right:48px;
+      margin-right:36px;
     }
   }
 

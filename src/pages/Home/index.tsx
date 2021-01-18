@@ -51,7 +51,7 @@ const Home: React.FC = () => {
       meta: meta,
     };
 
-    localStorage.setItem("@places", JSON.stringify(place));
+    apiPlaces.post('/places', place)
 
     alert("cadastrado com sucesso!");
   }
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
           return(
             <Place key={data.id}>
             <div>
-              <img src="https://restcountries.eu/data/bra.svg" alt="Brasil" />
+              <img src={`https://restcountries.eu/data/${String(data.country).toLowerCase()}.svg`} alt="Brasil" />
   
               <button>
                 <FiEdit2 size={20} color="#868686" />
