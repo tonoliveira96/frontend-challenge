@@ -46,6 +46,11 @@ export const ConatinerSearch = styled.div`
     height: 48px;
     border-radius: 7px;
     background: #fff;
+
+    option{
+        font-size: 16px;
+        line-height: 16px;
+    }
   }
 `;
 
@@ -76,6 +81,7 @@ export const Place = styled.div`
     img {
       width: 56px;
       height: 34px;
+      margin-right:48px;
     }
   }
 

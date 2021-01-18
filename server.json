@@ -1,0 +1,10 @@
+{
+    "places":[
+        {
+            "id": 1,
+            "country": "BRA",
+            "local": "Rio de Janeiro",
+            "meta": "04/2022"
+        }
+    ]
+}

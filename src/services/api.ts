@@ -1,7 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://restcountries.eu/rest/v2/all'
-  })
-  
-  export default api;
+  baseURL: "https://restcountries.eu",
+});
+
+export const apiPlaces = axios.create({
+  baseURL: "http://localhost:3333",
+});
+
+export default api;
