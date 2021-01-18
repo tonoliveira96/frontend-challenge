@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FiX, FiEdit2 } from "react-icons/fi";
-import { Button, Input, Select } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 import { Header, ConatinerSearch, ContainerCountry, Place } from "./styles";
 
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
 
     apiPlaces.get("places").then((response) => {
       console.log(response.data);
-      setPlaces(response.data)
+      setPlaces(response.data);
     });
   }, []);
 
@@ -51,9 +51,18 @@ const Home: React.FC = () => {
       meta: meta,
     };
 
-    apiPlaces.post('/places', place)
+    try {
+      apiPlaces.post("/places", place);
 
-    alert("cadastrado com sucesso!");
+      alert("cadastrado com sucesso!");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  function handleClickRemove(id: number){
+
+    apiPlaces.delete(`/places/${id}`);
   }
 
   return (
@@ -97,28 +106,33 @@ const Home: React.FC = () => {
       </ConatinerSearch>
 
       <ContainerCountry>
-        {places && places.map(data=>{
-          return(
-            <Place key={data.id}>
-            <div>
-              <img src={`https://restcountries.eu/data/${String(data.country).toLowerCase()}.svg`} alt="Brasil" />
-  
-              <button>
-                <FiEdit2 size={20} color="#868686" />
-              </button>
-              <button>
-                <FiX size={20} color="#868686" />
-              </button>
-            </div>
-  
-            <h3>{data.country}</h3>
-            <hr />
-            <p>Local: {data.local}</p>
-            <p>Meta: {data.meta}</p>
-          </Place>
-          )
-        })}
-       
+        {places &&
+          places.map((data) => {
+            return (
+              <Place key={data.id}>
+                <div>
+                  <img
+                    src={`https://restcountries.eu/data/${String(
+                      data.country
+                    ).toLowerCase()}.svg`}
+                    alt="Brasil"
+                  />
+
+                  <button>
+                    <FiEdit2 size={20} color="#868686" />
+                  </button>
+                  <button>
+                    <FiX size={20} color="#868686" onClick={()=>{handleClickRemove(data.id)}}/>
+                  </button>
+                </div>
+
+                <h3>{data.country}</h3>
+                <hr />
+                <p>Local: {data.local}</p>
+                <p>Meta: {data.meta}</p>
+              </Place>
+            );
+          })}
       </ContainerCountry>
     </>
   );

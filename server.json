@@ -17,18 +17,6 @@
       "local": "teste",
       "meta": "01/2020",
       "id": 3
-    },
-    {
-      "country": "PLW",
-      "local": "teste",
-      "meta": "02/2022",
-      "id": 4
-    },
-    {
-      "country": "SAU",
-      "local": "teste2",
-      "meta": "05/2025",
-      "id": 5
     }
   ]
 }

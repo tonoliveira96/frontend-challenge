@@ -73,7 +73,7 @@ export const Place = styled.div`
   div {
 
       button {
-        margin-left: 16px;
+        margin-left: 8px;
         background: none;
         border: 0;
         right: 0;
