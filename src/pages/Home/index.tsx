@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FiX, FiEdit2 } from "react-icons/fi";
-import { Button } from "@material-ui/core";
+import { Button, Modal } from "@material-ui/core";
 
 import { Header, ConatinerSearch, ContainerCountry, Place } from "./styles";
 
@@ -22,6 +22,8 @@ interface placesProps {
 const Home: React.FC = () => {
   const [country, setCountries] = useState<countryProps[]>();
   const [places, setPlaces] = useState<placesProps[]>();
+
+  const [open, setOpen] = React.useState(false);
 
   const [local, setLocal] = useState("");
   const [meta, setMeta] = useState("");
@@ -60,13 +62,30 @@ const Home: React.FC = () => {
     }
   }
 
-  function handleClickRemove(id: number){
-
-    apiPlaces.delete(`/places/${id}`);
+  function handleClickRemove(id: number) {
+    try {
+      alert("Deseja realmente excluir esta meta?");
+    } catch (err) {
+      console.log(err);
+    }
+    // apiPlaces.delete(`/places/${id}`);
   }
 
+  function handleClickEdit(id: number) {
+    apiPlaces.put(`/places/${id}`);
+  }
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <>
+      
+
       <Header>
         <img src={Logo} alt="Logo" />
       </Header>
@@ -106,6 +125,19 @@ const Home: React.FC = () => {
       </ConatinerSearch>
 
       <ContainerCountry>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <div className="modal">
+          <h2 id="simple-modal-title">Text in a modal</h2>
+          <p id="simple-modal-description">
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </p>
+        </div>
+      </Modal>
         {places &&
           places.map((data) => {
             return (
@@ -119,10 +151,22 @@ const Home: React.FC = () => {
                   />
 
                   <button>
-                    <FiEdit2 size={20} color="#868686" />
+                    <FiEdit2
+                      size={20}
+                      color="#868686"
+                      onClick={() => {
+                        handleOpen();
+                      }}
+                    />
                   </button>
                   <button>
-                    <FiX size={20} color="#868686" onClick={()=>{handleClickRemove(data.id)}}/>
+                    <FiX
+                      size={20}
+                      color="#868686"
+                      onClick={() => {
+                        handleClickRemove(data.id);
+                      }}
+                    />
                   </button>
                 </div>
 

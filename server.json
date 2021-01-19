@@ -1,22 +1,19 @@
 {
   "places": [
     {
-      "id": 1,
-      "country": "BRA",
-      "local": "Rio de Janeiro",
-      "meta": "04/2022"
+      "id": 1
     },
     {
-      "id": 2,
-      "country": "USA",
-      "local": "Rio de Janeiro",
-      "meta": "04/2022"
+      "id": 2
     },
     {
-      "country": "ASM",
-      "local": "teste",
-      "meta": "01/2020",
       "id": 3
+    },
+    {
+      "country": "AUS",
+      "local": "teste",
+      "meta": "02/2020",
+      "id": 4
     }
   ]
 }

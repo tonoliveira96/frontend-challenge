@@ -48,9 +48,9 @@ export const ConatinerSearch = styled.div`
     border-radius: 7px;
     background: #fff;
 
-    option{
-        font-size: 16px;
-        line-height: 16px;
+    option {
+      font-size: 16px;
+      line-height: 16px;
     }
   }
 `;
@@ -59,6 +59,12 @@ export const ContainerCountry = styled.div`
   display: flex;
   flex-direction: row;
   padding: 53px 36px;
+
+  div.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Place = styled.div`
@@ -69,20 +75,19 @@ export const Place = styled.div`
   height: 250px;
   border: 1px solid #868686;
   border-radius: 10px;
-  margin-right:30px;
+  margin-right: 30px;
   div {
-
-      button {
-        margin-left: 8px;
-        background: none;
-        border: 0;
-        right: 0;
-      }
+    button {
+      margin-left: 8px;
+      background: none;
+      border: 0;
+      right: 0;
+    }
 
     img {
       width: 56px;
       height: 34px;
-      margin-right:36px;
+      margin-right: 48px;
     }
   }
 
