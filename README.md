@@ -1,5 +1,20 @@
 # Desafio de Frontend
 
+# Instalação
+
+## Front-end
+1. Faça o clone deste repositório usando `git clone https://github.com/tonoliveira96/frontend-challenge.git`
+2. Entre na pasta do projeto usando `cd frontend-challenge`
+3. Rode `yarn` para instalar todas as dependência.
+4. Abra o terminal de rode `yarn start` para iniciar o projeto.
+
+## back-end
+
+1. Dentro do projeto existe um arquivo `server.js` usado como Fake API
+2. Rode no terminal `yarn json-server server.json -p 3333`.
+
+<hr/>
+
 <img src="./img/logo-clubpetro.png"
      alt="Clubpetro" width="300">
 
