@@ -23,15 +23,19 @@ export const ConatinerSearch = styled.div`
   button {
     height: 49px;
     width: 203px;
+    border: 0;
+    color: #fff;
     border-radius: 7px;
     background: #006c18;
   }
 
   input {
     border-radius: 7px;
+    background: #fff;
     border: 0;
     height: 48px;
     margin-left: 12px;
+    padding: 2px 10px;
   }
 
   input.local {
@@ -39,7 +43,7 @@ export const ConatinerSearch = styled.div`
   }
 
   input.meta {
-    width: 238px;
+    
   }
 
   select {
@@ -57,8 +61,9 @@ export const ConatinerSearch = styled.div`
 
 export const ContainerCountry = styled.div`
   display: flex;
-  flex-direction: row;
-  padding: 53px 36px;
+  flex-wrap: wrap; 
+  flex-direction: row; 
+  padding: 36px 18px;
 
   div.modal {
     display: flex;
@@ -70,12 +75,13 @@ export const ContainerCountry = styled.div`
 export const Place = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 14px 32px;
+  padding: 14px 30px;
   width: 250px;
   height: 250px;
   border: 1px solid #868686;
   border-radius: 10px;
-  margin-right: 30px;
+  margin: 16px;
+
   div {
     button {
       margin-left: 8px;

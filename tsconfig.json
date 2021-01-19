@@ -20,8 +20,8 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "jest":{
-    "collectCoverageFrom":[
+  "jest": {
+    "collectCoverageFrom": [
       "src/pages/**/*.tsx"
     ]
   },

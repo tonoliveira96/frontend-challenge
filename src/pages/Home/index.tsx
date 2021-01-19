@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { FiX, FiEdit2 } from "react-icons/fi";
-import { Button, Modal } from "@material-ui/core";
 
 import { Header, ConatinerSearch, ContainerCountry, Place } from "./styles";
 
@@ -57,14 +56,18 @@ const Home: React.FC = () => {
       apiPlaces.post("/places", place);
 
       alert("cadastrado com sucesso!");
+      window.location.reload();
     } catch (err) {
       console.log(err);
     }
   }
 
   function handleClickRemove(id: number) {
+    alert("Deseja realmente excluir esta meta?");
     try {
-      alert("Deseja realmente excluir esta meta?");
+      apiPlaces.delete(`/places/${id}`).then(() => {
+        window.location.reload();
+      });
     } catch (err) {
       console.log(err);
     }
@@ -84,8 +87,6 @@ const Home: React.FC = () => {
   };
   return (
     <>
-      
-
       <Header>
         <img src={Logo} alt="Logo" />
       </Header>
@@ -108,36 +109,40 @@ const Home: React.FC = () => {
             })}
         </select>
         <input
+          name="local"
           type="text"
           className="local"
+          required
           placeholder="Digite o local que deseja conhecer"
           onChange={(e) => setLocal(e.target.value)}
         />
         <input
+          name="meta"
           type="text"
           className="meta"
+          required
           placeholder="mês/ano"
           onChange={(e) => {
             setMeta(e.target.value);
           }}
         />
-        <Button onClick={handleAdd}>Adicionar</Button>
+        <button onClick={handleAdd}>Adicionar</button>
       </ConatinerSearch>
 
       <ContainerCountry>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        <div className="modal">
-          <h2 id="simple-modal-title">Text in a modal</h2>
-          <p id="simple-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
-        </div>
-      </Modal>
+        {/* <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+        >
+          <div className="modal">
+            <h2 id="simple-modal-title">Text in a modal</h2>
+            <p id="simple-modal-description">
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </p>
+          </div>
+        </Modal> */}
         {places &&
           places.map((data) => {
             return (
