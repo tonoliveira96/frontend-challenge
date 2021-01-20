@@ -34,12 +34,12 @@ export const ConatinerSearch = styled.div`
     background: #fff;
     border: 0;
     height: 48px;
-    margin-left: 12px;
+    margin: 12px;
     padding: 2px 10px;
   }
 
   input.local {
-    width: 455px;
+    
   }
 
   input.meta {
@@ -55,6 +55,16 @@ export const ConatinerSearch = styled.div`
     option {
       font-size: 16px;
       line-height: 16px;
+    }
+  }
+
+  @media(max-width: 720px){
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    input{
+      width: 100%;
     }
   }
 `;

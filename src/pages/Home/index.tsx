@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiX, FiEdit2 } from "react-icons/fi";
 
 import { Header, ConatinerSearch, ContainerCountry, Place } from "./styles";
+import Modal from '../../components/Modal';
 
 import Logo from "../../assets/Lugares-1.png";
 import api, { apiPlaces } from "../../services/api";
@@ -22,7 +23,7 @@ const Home: React.FC = () => {
   const [country, setCountries] = useState<countryProps[]>();
   const [places, setPlaces] = useState<placesProps[]>();
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const [local, setLocal] = useState("");
   const [meta, setMeta] = useState("");
@@ -78,8 +79,13 @@ const Home: React.FC = () => {
     apiPlaces.put(`/places/${id}`);
   }
 
-  const handleOpen = () => {
-    setOpen(true);
+  function handleOpen(){
+    console.log("deu")
+   return (
+    <Modal 
+    />
+   )
+    
   };
 
   const handleClose = () => {
@@ -90,7 +96,9 @@ const Home: React.FC = () => {
       <Header>
         <img src={Logo} alt="Logo" />
       </Header>
-
+      {/* <Modal 
+        
+      /> */}
       <ConatinerSearch>
         <select
           name="select-country"
@@ -130,19 +138,7 @@ const Home: React.FC = () => {
       </ConatinerSearch>
 
       <ContainerCountry>
-        {/* <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-        >
-          <div className="modal">
-            <h2 id="simple-modal-title">Text in a modal</h2>
-            <p id="simple-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-          </div>
-        </Modal> */}
+        
         {places &&
           places.map((data) => {
             return (
@@ -160,7 +156,7 @@ const Home: React.FC = () => {
                       size={20}
                       color="#868686"
                       onClick={() => {
-                        handleOpen();
+                        console.log(data);
                       }}
                     />
                   </button>
